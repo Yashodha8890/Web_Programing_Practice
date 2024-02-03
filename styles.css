@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap'); 
+
+/*----Nav link styles starts here-----*/
+.nav-link
+{
+    color: white;
+    position: relative;
+    padding: none;
+    font-size: 24px;
+}
+
+.navbar-nav
+{
+    --bs-nav-link-hover-color: rgb(175, 102, 6);
+}
+
+.nav-link :hover
+{
+    color: rgb(160, 100, 22);
+}
+
+.menu-active
+{
+    color: antiquewhite;
+}
+
+.menu-active :hover
+{
+    color: wheat;
+}
+
+/* Nav link styles ends here-- */
+
+
+/*------body & common styles starts here-----*/
+body{
+    font-family: oregano;
+    line-height: 1.7;
+}
+
+h1
+{
+    font-size: 46px;
+}
+
+a
+{
+    color: rgb(139, 92, 5);
+    text-decoration: none;
+    transition: all 0.4s;
+    font-weight: 600;
+}
+
+h2
+{
+    font-size: 24px;
+    margin-top: 25px;
+}
+
+h3,h4
+{    
+    color: rgb(121, 85, 33);
+}
+
+h5
+{
+    color: rgb(174, 154, 126);
+}
+
+h6
+{
+    font-size: 22px;
+}
+
+p
+{
+    font-size: 20px;
+}
+
+/* a:hover
+{
+    color: red;
+} */
+
+img
+{
+    min-width: 100%;
+}
+
+/*button decoration*/
+.btn
+{
+    border-radius: 0;
+    padding: 5px 20px;
+}
+
+.btn-primary
+{
+    color:rgb(253, 253, 253);
+    font-weight: 500;
+    font-size: 20px;
+    --bs-btn-border-color:none;
+    --bs-btn-active-bg:rgb(233, 169, 74);
+    background-color: rgb(100, 61, 3);
+    border-radius: 40px;
+}
+
+.btn-primary:hover
+{
+    border-color:none;
+    --bs-btn-hover-bg: rgb(233, 169, 74);
+    color: rgb(0, 0, 0);
+}
+
+.btn-brand
+{
+    color:rgb(255, 255, 255);
+    font-weight: 500;
+    border-color: none;
+    background-color:#4f3509;
+    border-radius: 40px;
+    font-size: 24px;
+}
+
+.btn-brand:hover
+{
+    --bs-btn-hover-bg: rgb(233, 169, 74);
+}
+
+.btn
+{
+    cursor:default;
+}
+
+.btn-default
+{
+    background-color: rgb(100, 61, 3);
+    margin-left: 5px;
+    color: white;
+}
+
+.btn-default :hover
+{
+    background-color: antiquewhite;
+}
+
+/*----Body & common styles ends here-------*/
+
+
+/*-----Hero section styles starts here-----*/
+.frontpage-h1
+{
+    padding-bottom: 30px;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.hero-h2
+{
+    padding-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+}
+
+.hero-h4
+{
+    padding-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.bg-cover
+{
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important; 
+}
+
+.carousel-control-prev,.carousel-control-next
+{
+    background-color: rgba(0,0, 0, 0.6);
+    width: 40px;
+    height: 70px;
+    margin: auto;
+}
+
+.slide-1
+{
+    background: url(images/hero_section/slide1.jpg);
+}
+
+.slide-2
+{
+    background: linear-gradient(rgba(128, 124, 124,0.2),rgb(166, 162, 162)), url(images/hero_section/slide2.jpeg);
+}
+
+.slide-3
+{
+    background: linear-gradient(rgba(193, 191, 191, 0.2),rgb(221, 211, 211)), url(images/hero_section/slide3.jpeg);
+}
+
+.slide-4
+{
+    background: linear-gradient(rgba(128, 124, 124,0.2),rgb(166, 162, 162)), url(images/hero_section/slide4.jpeg);
+}
+
+/*------Hero section styles ends here------*/
+
+/*-----About section style starts here-------*/
+.aboutH1
+{
+    margin-top: 50px;
+}
+
+.about-content
+{
+    padding-top: 50px;
+    text-align: left;
+}
+
+.managementImage
+{
+    height: auto;
+    width: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */  
+    border-radius: 50%;
+}
+
+.followUs
+{
+    margin-top: 120px
+}
+
+.followUsIcon
+{
+    height: 50px;
+    width: auto;
+    border-radius: 100%;
+     margin-top: 100px; 
+}
+
+.about-bg
+{
+    background-image: url(images/about/background.jpg);    
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 820px;
+}
+
+/* .colgap
+{
+    padding-right: 50px;
+    padding-left: 80px;
+} */
+
+/*-----About section styles ends here----*/
+
+/*------Menu section styles starts here--------*/
+
+.intro-text
+{
+    margin-bottom:40px;
+    text-align: center;
+    margin: 14px auto 0 auto;
+}
+
+.intro-text p
+{
+    max-width: 500px;
+    margin: 14px auto 0 auto;
+}
+
+.nav-pills .nav-link
+{
+    background-color: #4f3509;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    color:rgb(255, 255, 255);   
+    border-radius: 100px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.nav-pills .nav-link 
+{
+    background-color: burlywood;
+    color: white;
+    font-weight: 20px;    
+}
+
+.nav-link-menu
+{
+    background-color: #4f3509;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    color:rgb(255, 255, 255);   
+    border-radius: 100px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    --bs-nav-pills-link-active-bg: #4f3509;
+    background-color: #483a28;
+    padding : none;
+}
+
+.menu-all-image
+{
+    height: 200px;
+    width:auto;
+    /*border-radius: 50%*/    
+}
+
+.menu-item .stars
+{
+    color: orange;
+}
+
+.shadow-on-hover
+{
+    transition: all 0.4s;
+}
+
+.shadow-on-hover:hover
+{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/*-----Menu section styles ends here----*/
+
+/*---- Services section styles starts here-----*/
+
+.container-services
+{
+    background-color: black;
+    height: 820px;
+    width:auto;
+    font-family: oregano;
+    color: aliceblue;
+    text-align: center;
+}
+
+ .logo 
+{
+    text-align: center;
+    font-size: 40px;
+    color: aliceblue;
+    font-family: oregano;
+    padding-top: 40px;
+    margin-bottom: 25px;
+}
+
+.cards
+{
+    width: 1200px;
+    margin: 40px auto;
+    padding-top: 60px;   
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    gap: 40px;
+   /* align-items: center;*/
+    justify-content: center;    
+}
+
+img, .image-button 
+{
+    width: 100%;
+    height: auto;
+    border-radius: 0%; /* Correct the border-radius value for a circular shape */
+    display: flex; /* Use 'flex' instead of '-ms-flexbox' */
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    transition: transform 0.2s; /* Add a smooth transition effect */
+} 
+
+/* Apply styles to image buttons when hovered */
+.image-button:hover 
+{
+    transform: scale(1.2); /* Increase the size by 20% on hover (adjust as needed) */
+}
+
+.service
+{
+    height: 820px;
+    width: auto;
+}
+
+/*-----Services section styles ends here----*/
+
+/*-----Contact us section styles starts here----*/
+.contactSection
+{
+    background: url(images/contact_us/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+
+/*-----Contact us section styles ends here----*/
+
+/*---- Footer section styles starts here-----*/
+footer
+{
+    background-image: url(images/footer/footer_banner.png);    
+    color: rgb(242, 239, 235);
+    font-size: 12px;
+    height: 300px;
+    width: auto;
+    padding: 16px 24px 16px 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 20px;
+}
+
+.footer-icons
+{
+    height: 30px;
+    width: auto;
+    position: d;
+}
+
+.nav-link-footer
+{
+    font-size: 20px;
+    padding-top: 1px;
+    padding-bottom: 12px;
+}
+
+.nav-link-footer:hover
+{
+    color: rgb(160, 100, 22);
+}
+
+.nav-item
+{
+    display: flex;
+    align-items: left;  
+    font-size: 20px;  
+}
+
+.footerCornerImage
+{
+    height: 200px;
+    width: auto;
+}
+
+ .footerLogo
+{
+    margin-top: 25px;
+    margin-bottom: 20px;
+} 
+
+.icons
+{
+    /* height: 40px;
+    width: auto; */
+    border-radius: 100%;
+    padding-right: 10px; 
+} 
+
+/*---- Footer section styles ends here-----*/
+
+
+/* ------- stylesheet ends here ---- */
