@@ -467,5 +467,11 @@ footer
 
 /*---- Footer section styles ends here-----*/
 
-
+.container-additem
+{
+    background-color: antiquewhite;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+}
 /* ------- stylesheet ends here ---- */
