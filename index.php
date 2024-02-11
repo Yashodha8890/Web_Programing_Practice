@@ -150,7 +150,8 @@
 
                 <li class="nav-item" role="presentation">
                     <button class="nav-link nav-link-menu" id="pills-Snacks-tab" data-bs-toggle="pill" data-bs-target="#pills-Snacks" type="button" role="tab" aria-controls="pills-Snacks" aria-selected="true">Snacks</button>
-                </li>              
+                </li>   
+                        
             </ul>
             <!--Nav and tab end-->
 
@@ -176,10 +177,20 @@
                                         </span>  
                                         <span class="align-items-center">€ 7,0</span>
                                     </div>
+
                                     <h5 class="my-2"><a href="#"> Sri Lankan Rice & Curry</a></h5>
                                     <p class="small">Rice, 3 Vegetables, Meat(Chicken/Pork/Beef)/Egg/Vegan</p>
                                     <span>
-                                        <i><input type="button" value="Add to cart" class = "btn btn-primary align-items-center"></i>
+                                        <!-- <i><input type="button" value="Add to cart" class = "btn btn-primary align-items-center"></i> -->
+                                            <div class="input-group number-spinner">
+                                                <button id="item-minus" class="btn btn-primary"><i class="fas fa-minus"></i></button>
+                                                <input id="phone-number" type="number" min="0" class="form-control text-center" value="1">
+                                                <button id="item-plus" class="btn btn-primary"><i class="fas fa-plus"></i></button>
+                                                <img src="images/remove.png" alt="" class="remove-item">
+
+
+
+                                            </div>
                                     </span>
                                 </div>
                             </div>
@@ -427,7 +438,16 @@
                             </div>
                         </div>
 
-
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            
+        </div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">Check Out</button>
+        </div>
+    </div>
                     </div>
                 </div>  
 

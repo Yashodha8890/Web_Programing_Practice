@@ -467,11 +467,50 @@ footer
 
 /*---- Footer section styles ends here-----*/
 
+/*----shopping cart---*/
+
+.shopping-img
+{
+    width: 40px;
+    display: flex;
+
+}
+
+.btn-shopping
+{
+    width: 40px;
+    border-radius: 50%;
+    background-image: url(images/basket.png);
+}
+
+.order-online-cart
+{
+    padding-right: none;
+}
+
 .container-additem
 {
     background-color: antiquewhite;
-    padding-left: 80px;
+    padding-left: none;
     padding-right: 80px;
     padding-top: 20px;
+    display: flexbox;
+    height: 100%;
+}
+
+.coladmin
+{
+    padding-left: 50px;
+
+}
+
+.adminheader-h1
+{
+    color: white;
+}
+
+.adminheader-logo
+{
+    padding-left: none;
 }
 /* ------- stylesheet ends here ---- */

@@ -38,8 +38,11 @@
               </li>
              
             </ul>
-            <a class="btn btn-primary" href="#menu">Order Online</a>
-            <a class="btn btn-primary" href="addItem.php">Admin view</a>
+            <a class="btn btn-primary order-online-cart" href="#menu">Order Online</a>
+            <button style="font-size:24px"><i class="fa fa-shopping-cart"></i></button> 
+            <span class="quantity">0</span> 
+            <a class="btn btn-primary" href="admin/admin.php">Admin view</a>
+            
           </div>
         </div>
       </nav>

@@ -1,8 +1,8 @@
 <?php
-    $serverName = "web-dev-env-main-db-1";
+    $serverName = "web-dev-env-main-db-1";   
     $userName = "root";
     $password = "password";
-    $dbName = "ptoject_practice";
+    $dbName = "web_programing_project_db";
 
     //create the connection with the Database
 
