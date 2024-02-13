@@ -2,7 +2,7 @@
 
     include '../config/db.php';
 
-    $a = $_GET['id'];
+    $a = $_GET['itemId'];
 
     $result = mysqli_query($conn,"SELECT * FROM food_items WHERE id= '$a'");
     $row= mysqli_fetch_array($result);
@@ -35,8 +35,8 @@
   </div>
 <br>
   <div class="row">
-  <div class="col"><button type="submit" class="btn btn-primary" name="submit">Update your Information</button></div>
-  <!-- <div class="col"><button type="submit" class="btn btn-primary" name="delete">Delete your Information</button></div> -->
+  <div><button type="submit" class="btn btn-primary" name="submit">Update your Information</button></div>
+  <div><button type="submit" class="btn btn-primary" name="delete">Delete your Information</button></div>
 </div>
 </form>
 <?php 
@@ -47,7 +47,8 @@ value is set and not NULL. If the form has been submitted, the value of $_POST['
 and the code inside the if block will be executed. If the form has not been submitted, 
 the value of $_POST['submit'] will not be set, and the code inside the if block will not be executed.
 */
-if (isset($_POST['submit'])){
+if (isset($_POST['submit']))
+{
     
     $itemName = $_POST["itemName"];            
     $catergoryId = $_POST["catergoryId"];
@@ -55,23 +56,28 @@ if (isset($_POST['submit'])){
     $unitPrice = $_POST["unitPrice"];
     
     $query = mysqli_query($conn,"UPDATE food_items set itemName='$itemName', itemDescription='$itemDescription', unitPrice='$unitPrice' where id='$a'");
-    if($query){
+    if($query)
+    {
         echo "<h2>Your information is updated Successfully</h2>";
         // if you want to redirect to update page after updating
     }
     else { echo "Record Not modified";}
-    }
-
-    /* if (isset($_POST['delete'])){
-        $query = mysqli_query($conn,"DELETE FROM studentsinfo where id='$a'");
-        if($query){
-            echo "Record Deleted with id: $a <br>";
-            // if you want to redirect to update page after updating
-            //header("location: update.php");
+}
+  if (isset($_POST['delete']))
+  {
+      $query = mysqli_query($conn,"DELETE FROM food_items where id='$a'");
+      if($query)
+      {
+        echo "Record Deleted with id: $a <br>";
+        // if you want to redirect to update page after updating
+        //header("location: update.php");
+      }
+        else 
+        { 
+          echo "Record Not Deleted";
         }
-        else { echo "Record Not Deleted";}
-        }
- */
+        
+  }
 $conn->close();
 
 ?>

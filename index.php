@@ -133,11 +133,11 @@
             <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
 
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link nav-link-menu active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">All</button>
+                  <button class="nav-link nav-link-menu active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" name="allMenu" aria-selected="true">All</button>
                 </li>
 
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link nav-link-menu" id="pills-Sri-Lankan-tab" data-bs-toggle="pill" data-bs-target="#pills-Sri-Lankan" type="button" role="tab" aria-controls="pills-Sri-Lankan" aria-selected="true">Sri Lankan</button>
+                    <button class="nav-link nav-link-menu" id="pills-Sri-Lankan-tab" data-bs-toggle="pill" data-bs-target="#pills-Sri-Lankan" type="button" role="tab" aria-controls="pills-Sri-Lankan" name="sriLankanMenu" aria-selected="true">Sri Lankan</button>
                   </li>
 
                 <li class="nav-item" role="presentation">
@@ -150,13 +150,18 @@
 
                 <li class="nav-item" role="presentation">
                     <button class="nav-link nav-link-menu" id="pills-Snacks-tab" data-bs-toggle="pill" data-bs-target="#pills-Snacks" type="button" role="tab" aria-controls="pills-Snacks" aria-selected="true">Snacks</button>
-                </li>   
+                </li> 
+                <!-- <div class="cart-icon"> -->
+              <!-- <i class= "fa-solid fa-cart-shopping"> -->
+              <span>0</span>
+            <!-- </div>   -->
                         
             </ul>
             <!--Nav and tab end-->
 
             <!--All menu tab starts-->
-            <div class="tab-content" id="pills-tabContent">
+            <!--comment starts here-->
+ <!--            <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab" tabindex="0">
                     <div class="row gy-4">
                         <div class="col-lg-3 col-sm-6">
@@ -178,19 +183,16 @@
                                         <span class="align-items-center">€ 7,0</span>
                                     </div>
 
-                                    <h5 class="my-2"><a href="#"> Sri Lankan Rice & Curry</a></h5>
+                                    <h5 class="my-2"><a href="#">Sri Lankan Rice & Curry</a></h5>
                                     <p class="small">Rice, 3 Vegetables, Meat(Chicken/Pork/Beef)/Egg/Vegan</p>
                                     <span>
-                                        <!-- <i><input type="button" value="Add to cart" class = "btn btn-primary align-items-center"></i> -->
-                                            <div class="input-group number-spinner">
-                                                <button id="item-minus" class="btn btn-primary"><i class="fas fa-minus"></i></button>
-                                                <input id="phone-number" type="number" min="0" class="form-control text-center" value="1">
-                                                <button id="item-plus" class="btn btn-primary"><i class="fas fa-plus"></i></button>
-                                                <img src="images/remove.png" alt="" class="remove-item">
+                                        <div class="input-group number-spinner">
+                                            <button id="item-minus" class="btn btn-primary"><i class="fas fa-minus"></i></button>
+                                            <input id="phone-number" type="number" min="0" class="form-control text-center" value="1">
+                                            <button id="item-plus" class="btn btn-primary"><i class="fas fa-plus"></i></button>
+                                            <img src="images/remove.png" alt="" class="remove-item">
 
-
-
-                                            </div>
+                                        </div>
                                     </span>
                                 </div>
                             </div>
@@ -212,7 +214,7 @@
                                             <i class="ri-star-half-fill"></i>
                                         </span>  
                                     </div>
-                                    <h5 class="my-2"><a href="#"> Indi Appa(String hoppers) & curry</a></h5>
+                                    <h5 class="my-2"><a href="#">Indi Appa(String hoppers) & curry</a></h5>
                                     <p class="small">String hoppers and curries(Dhall/Chicken/Pol Sambal/Egg)</p>
                                 </div>
                             </div>
@@ -451,8 +453,75 @@
                     </div>
                 </div>  
 
-            </div>
+            </div>-->
+            <!--comments ends here-->
             <!--All menu tab ends-->
+
+
+<?php
+    //import db.php
+    include 'config/db.php';
+?>
+
+ <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab" tabindex="0">
+                    <div class="row gy-4">
+                        <!-- <div class="col-lg-3 col-sm-6"> -->
+                            <!--<div class="menu-item bg-white shadow-on-hover">
+                                <a href="#menu" class="image-button"> -->
+<!-- <div class="container-fluid">
+    <div class="col-md-12">
+        <div class="row"> -->
+            <div class="col-md-12">
+                <div class="row gy-4">                     
+                    <?php
+                        
+                        $query= "SELECT * FROM food_items";
+                        $result= mysqli_query($conn,$query);
+
+                        while($row = mysqli_fetch_array($result))
+                        { 
+                    ?>
+                            <div class="col-md-3">                            
+                                <form method ="get" action="index.php?id=<?=$row['itemId']; ?>">
+                                    <img class="menu-all-image image-button" src="images/menu/all/<?= $row['image']; ?>">
+                                    <h2><b><?=$row['itemName']; ?></b></h2>
+                                    <p class="normal"><?=$row['itemDescription']; ?></p>
+                                    <h3 style="color:red;"><?=number_format($row['unitPrice'],2); ?> €</h3>
+                                    <!-- <i class="fa-solid fa-plus add-to-cart"</i> -->
+                                    <input type="submit" class="btn btn-warning" name="addToCart" value="Order Now">
+                                    <br><br>
+                                </form>
+                            </div>
+                    <?php 
+                        }
+                    
+                    ?>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- cart sidebar section -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-close">
+        <i class ="fa-solid fa-close"></i>
+        <div class="cart-menu">
+            <h3>My Basket</h3>
+            <div class="cart-items">test 1</div>
+        </div>
+        <div class="sidebar--footer">
+            <div class="total--amount">
+                <h5>Total</h5>
+                <div class="cart-total">0.00 €</div>
+            </div>
+            <button class="checkout-btn">Check Out</button>
+        </div>
+    </div>
+
+</div>
+
 
             <!--Sri Lankan tab starts-->
                 <div class="tab-content" id="pills-tabContent">
@@ -1106,6 +1175,14 @@
                 </a>
                 <h2>Offers</h2>
                 <p>"Dive into savings with tempting combos and mouthwatering discounts! Elevate your dining experience without breaking the bank. Savor the flavors today!"</p>
+            </div>
+
+            <div class="card">
+                <a href="#services" class="image-button">
+                <img class="img-fluid" img src="images/services/offers.jpg">
+                </a>
+                <h2>Table Reservation</h2>
+                <p>Lorem ipsum dolor sit tempore eius eum porro! Corrupti asperiores iste ipsam!</p>
             </div>
         </div>
     </div>

@@ -340,7 +340,7 @@ img
 .container-services
 {
     background-color: black;
-    height: 820px;
+    height: 800px;
     width:auto;
     font-family: oregano;
     color: aliceblue;
@@ -363,8 +363,8 @@ img
     margin: 40px auto;
     padding-top: 60px;   
     display: grid;
-    grid-template-columns: 300px 300px 300px 300px;
-    gap: 40px;
+    grid-template-columns: 240px 240px 240px 240px 240px;
+    gap: 30px;
    /* align-items: center;*/
     justify-content: center;    
 }
@@ -389,7 +389,7 @@ img, .image-button
 
 .service
 {
-    height: 820px;
+    height: auto;
     width: auto;
 }
 
@@ -473,12 +473,13 @@ footer
 {
     width: 40px;
     display: flex;
+    border-radius: 50%;
 
 }
 
 .btn-shopping
 {
-    width: 40px;
+    width: 30px;
     border-radius: 50%;
     background-image: url(images/basket.png);
 }
@@ -488,29 +489,19 @@ footer
     padding-right: none;
 }
 
-.container-additem
+.span-quantity
 {
-    background-color: antiquewhite;
-    padding-left: none;
-    padding-right: 80px;
-    padding-top: 20px;
-    display: flexbox;
-    height: 100%;
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: 95px;
 }
 
-.coladmin
-{
-    padding-left: 50px;
-
-}
-
-.adminheader-h1
-{
-    color: white;
-}
-
-.adminheader-logo
-{
-    padding-left: none;
-}
 /* ------- stylesheet ends here ---- */

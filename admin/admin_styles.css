@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Song+Myung&display=swap');
+
+body
+{
+    font-family: Poppins;
+    font-size: 16px;
+    
+}
+
+/*button decoration*/
+.btn
+{
+    border-radius: 0;
+    padding: 5px 20px;
+}
+
+.btn-primary
+{
+    color:rgb(253, 253, 253);
+    font-weight: 500;
+    font-size: 15px;
+    --bs-btn-border-color:none;
+    --bs-btn-active-bg:rgb(233, 169, 74);
+    background-color: rgb(100, 61, 3);
+    border-radius: 40px;
+}
+
+.btn-danger
+{
+    color:rgb(249, 249, 249);
+    font-weight: 500;
+    font-size: 15px;
+    --bs-btn-border-color:none;
+    --bs-btn-active-bg:rgb(233, 169, 74);
+    background-color: rgb(228, 45, 45);
+    border-radius: 40px;
+    width: 90px;
+}
+
+.btn-primary:hover
+{
+    border-color:none;
+    --bs-btn-hover-bg: rgb(233, 169, 74);
+    color: rgb(0, 0, 0);
+}
+
+.btn-brand
+{
+    color:rgb(255, 255, 255);
+    font-weight: 500;
+    border-color: none;
+    background-color:#4f3509;
+    border-radius: 40px;
+    font-size: 24px;
+}
+
+.btn-brand:hover
+{
+    --bs-btn-hover-bg: rgb(233, 169, 74);
+}
+
+.btn
+{
+    cursor:default;
+}
+
+.btn-default
+{
+    background-color: rgb(100, 61, 3);
+    margin-left: 5px;
+    color: white;
+}
+
+.btn-default :hover
+{
+    background-color: antiquewhite;
+}
+
+.container-additem
+{
+    background-color: antiquewhite;
+    padding-left: none;
+    padding-right: 80px;
+    padding-top: 20px;
+    display: block;
+    height: 100%;
+}
+
+.coladmin
+{
+    padding-left: 50px;
+    height: auto;
+    font-size: 20px;
+}
+
+.adminheader-h1
+{
+    color: white;
+}
+
+.adminheader-logo
+{
+    padding-left: none;
+}
+
+.shopping-img
+{
+    width: 40px;
+    display: flex;
+
+}
+
+.btn-shopping
+{
+    width: 40px;
+    border-radius: 50%;
+    background-image: url(images/basket.png);
+}

@@ -15,6 +15,8 @@
             <form method="post" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>>
                 <label for="formGroupExampleInput2">Item Name :</label>   
                 <input type="text" class="form-control" id="formGroupExampleInput2" name="itemName" placeholder="" required><br/>
+                <label for="addImage">Image :</label>   
+                <input type="file" accept="image/png, image/jpeg, image/jpg" class="box" id="addImage" name="addImage" ><br/><br/>
                 <label for="cat">Item Catergory :</label>
                 <select class="form-select" aria-label="Default select example" id="cat" name="catergoryId">
                             <option selected>Select Catergory</option>
@@ -70,7 +72,8 @@
     
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addItem']))
         {       
-            $itemName = $_POST["itemName"];            
+            $itemName = $_POST["itemName"];     
+            $itemImage = $_POST["addImage"];        
             $catergoryId = $_POST["catergoryId"];
             $itemDescription = $_POST["description"];
             $unitPrice = $_POST["unitPrice"];
@@ -79,7 +82,7 @@
             include '../config/db.php';
 
             //Write SQL statement to add data to the table
-            $sql="insert into food_items(itemName,categoryId,itemDescription,unitPrice) values('$itemName','$catergoryId','$itemDescription','$unitPrice')";
+            $sql="insert into food_items(itemName,image,categoryId,itemDescription,unitPrice) values('$itemName','$itemImage','$catergoryId','$itemDescription','$unitPrice')";
             //$sql="insert into studentsinfo (fname, lname, city, groupid) values('$fname', '$lname', '$city', '$groupid')";
 
             if($conn -> query($sql)==TRUE)
