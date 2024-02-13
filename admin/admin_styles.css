@@ -117,3 +117,16 @@ body
     border-radius: 50%;
     background-image: url(images/basket.png);
 }
+
+.display-image
+{
+    margin: 5px;
+    width: 250px;
+    height: auto;
+}
+
+.btn-seperate
+{
+    margin: 10px 10px;
+}
+

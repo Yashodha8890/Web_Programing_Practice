@@ -29,7 +29,8 @@
                     <input type="text" class="form-control" id="formGroupExampleInput3" name="description" placeholder="" required><br/>
                     <label for="formGroupExampleInput4">Unit Price :</label>
                     <input type="text" class="form-control" id="formGroupExampleInput4" name="unitPrice" placeholder="" required><br/>
-                    <input type="submit" class="btn btn-primary text-center" name="addItem" value="Save Item"> <br/><br/>  
+                    <input type="submit" class="btn btn-primary text-center" name="addItem" href="manage_food_items.php" value="Save Item"> <br/><br/> 
+                    <!-- <a class='btn btn-submit btn-sm' name="addItem" href='manage_food_items.php'>Save Item</a> -->
             </form>
         </div>
 </div>
@@ -101,4 +102,4 @@
             // }        
     ?>
 
-    
+

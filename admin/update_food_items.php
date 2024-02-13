@@ -4,41 +4,73 @@
 
     $a = $_GET['itemId'];
 
-    $result = mysqli_query($conn,"SELECT * FROM food_items WHERE id= '$a'");
-    $row= mysqli_fetch_array($result);
+    $result = mysqli_query($conn,"SELECT * FROM food_items WHERE itemId= '$a'");
+    $row = mysqli_fetch_array($result);
 ?>
 
-<h2>Update food Items: </h2>
-<form name= "form1" method="post" action="">
-  <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="" name="itemId" required value="<?php echo $row['itemId']; ?>">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="" name="categoryId" required value="<?php echo $row['categoryId']; ?>" >
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="" name="itemName" required value="<?php echo $row['itemName']; ?>">
-    </div>
+<h2 class="text-center">Update food Items</h2>
+<div class="update-item bg-light">
+  <form name= "form_update_item" method="post" action="">
+    <div class="row">
+        <div class="col-md-6">
+          <label for="itemId"><b>Item Id :</b></label>
+          <input type="text" class="form-control" placeholder="" id="itemId" name="itemId" required disabled value="<?php echo $row['itemId']; ?>">
+        </div>
 
-    <div class="col">
-      <input type="text" class="form-control" placeholder="" name="itemDescription" required value="<?php echo $row['itemDescription']; ?>">    
+        <div class="col-md-6">
+        <label for="categoryId"><b>Category Id :</b></label>
+          <input type="text" class="form-control disabled" placeholder="" id="categoryId" name="categoryId" required disabled value="<?php echo $row['categoryId']; ?>" >
+        </div>
     </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="itemName"><b>Item Name :</b></label>
+        <input type="text" class="form-control" placeholder="" id="itemName" name="itemName" required value="<?php echo $row['itemName']; ?>">
+      </div>
 
-    <div class="col">
-      <input type="text" class="form-control" placeholder="" name="unitPrice" required value="<?php echo $row['unitPrice']; ?>">    
+      <div class="col-md-6">
+        <label for="itemDescription"><b>Item Description :</b></label>
+        <input type="text" class="form-control" placeholder="" id="itemDescription" name="itemDescription" required value="<?php echo $row['itemDescription']; ?>">    
+      </div>
     </div>
+      <br>
+        
+    <div class="row">
+      <div class="col-md-4">
+        <label for="unitPrice"><b>Unit Price (€) :</b></label>
+        <input type="text" class="form-control" placeholder="" id="unitPrice" name="unitPrice" required value="<?php echo $row['unitPrice']; ?>">    
+      </div>
 
-  </div>
-<br>
-  <div class="row">
-  <div><button type="submit" class="btn btn-primary" name="submit">Update your Information</button></div>
-  <div><button type="submit" class="btn btn-primary" name="delete">Delete your Information</button></div>
+      <div class="col-md-4">
+        <label for="image"><b>Image :</b></label>
+        <div class="display-image">
+          <img class="display-image " style: src="../images/menu/all/<?= $row['image']; ?>"> <br>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="addImage"><b>Change Image :</b></label> <br>  
+        <input type="file" accept="image/png, image/jpeg, image/jpg" class="box" id="changeImage" name="addImage" ><br/><br/>         
+      </div>        
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-md-3">        
+      </div>
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-primary btn-seperate btn-sm" name="submit">Update your Information</button>
+      </div>
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-primary btn-seperate btn-sm" name="delete">Delete your Information</button>
+      </div>
+      <div class="col-md-3">        
+      </div>      
+    </div>
+  </form>
 </div>
-</form>
+
 <?php 
 /* 
 The isset() function is used to check if a variable is set and not NULL.
@@ -51,11 +83,10 @@ if (isset($_POST['submit']))
 {
     
     $itemName = $_POST["itemName"];            
-    $catergoryId = $_POST["catergoryId"];
-    $itemDescription = $_POST["description"];
+    $itemDescription = $_POST["itemDescription"];
     $unitPrice = $_POST["unitPrice"];
     
-    $query = mysqli_query($conn,"UPDATE food_items set itemName='$itemName', itemDescription='$itemDescription', unitPrice='$unitPrice' where id='$a'");
+    $query = mysqli_query($conn,"UPDATE food_items set itemName='$itemName', itemDescription='$itemDescription', unitPrice='$unitPrice' where itemId='$a'");
     if($query)
     {
         echo "<h2>Your information is updated Successfully</h2>";
@@ -65,7 +96,7 @@ if (isset($_POST['submit']))
 }
   if (isset($_POST['delete']))
   {
-      $query = mysqli_query($conn,"DELETE FROM food_items where id='$a'");
+      $query = mysqli_query($conn,"DELETE FROM food_items where itemId='$a'");
       if($query)
       {
         echo "Record Deleted with id: $a <br>";
